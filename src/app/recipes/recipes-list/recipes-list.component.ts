@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Recipe } from '../recipes.model';
 
 @Component({
@@ -8,6 +8,7 @@ import { Recipe } from '../recipes.model';
 })
 export class RecipesListComponent {
   
+  @Input('ixx') e='';
 
   @Output() recipes: Recipe[] = [
     new Recipe(
