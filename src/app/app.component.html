@@ -1,9 +1,11 @@
-<app-header></app-header>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes ixx="{{xx}}"></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="loadLink === 'recipe'"></app-recipes>
+      <app-shopping-list
+        *ngIf="loadLink === 'shopping-list'"
+      ></app-shopping-list>
     </div>
   </div>
 </div>

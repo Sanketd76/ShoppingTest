@@ -7,5 +7,9 @@ import { Recipe } from './recipes/recipes.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  xx = 'test';
+  loadLink = 'recipe';
+
+  onNavigate(event: string) {
+    this.loadLink = event;
+  }
 }
