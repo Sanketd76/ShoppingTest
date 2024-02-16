@@ -1,6 +1,14 @@
 <div class="row">
   <div class="col-xs-10">
-    <app-shopping-edit (ingridentAdded)="onIngradientAdded($event)"></app-shopping-edit>
+    <ul>
+      <li *ngFor="let account of accounts">
+        {{ account.name }}
+      </li>
+    </ul>
+
+    <app-shopping-edit
+      (ingridentAdded)="onIngradientAdded($event)"
+    ></app-shopping-edit>
     <hr />
     <ul class="list-group">
       <a

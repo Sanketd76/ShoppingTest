@@ -6,6 +6,41 @@
       <app-shopping-list
         *ngIf="loadLink === 'shopping-list'"
       ></app-shopping-list>
+      <div appBasicHighlight>Testing basic</div>
+      <div
+        appBetterHighlight
+        [defaultColor]="'black'"
+        [hightlightColor]="'pink'"
+      >
+        Testing a better
+      </div>
+
+      <button class="btn btn-primary" (click)="toggleDisplay()">Toggle</button>
+      <div class="list-group" *appUnless="!showOnlyOdd">
+        <li
+          [ngClass]="{ odd: even % 2 !== 0 }"
+          *ngFor="let number of oddNumber"
+          class="list-group-item"
+        >
+          {{ number }}
+        </li>
+      </div>
+      <div class="list-group" *appUnless="showOnlyOdd">
+        <li
+          [ngClass]="{ odd: even % 2 !== 0 }"
+          *ngFor="let number of evenNumber"
+          class="list-group-item"
+        >
+          {{ number }}
+        </li>
+      </div>
+
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">case 5</p>
+        <p *ngSwitchCase="6">case 6</p>
+        <p *ngSwitchCase="8">case 8</p>
+        <p *ngSwitchDefault="10">case 0</p>
+      </div>
     </div>
   </div>
 </div>
