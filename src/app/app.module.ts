@@ -14,6 +14,17 @@ import { BasicHightlightDirective } from './custom-directives/basic.highlight.di
 import { BetterHighlightDirective } from './custom-directives/better-highlight.directive';
 import { UnlessDirective } from './custom-directives/unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ActiveusersComponent } from './@practice/activeusers/activeusers.component';
+import { InactiveusersComponent } from './@practice/inactiveusers/inactiveusers.component';
+import { ShoppingListService } from './shopping-list/shoppinglist.service';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'recipes', component: RecipesComponent },
+  { path: 'shoppingList', component: ShoppingListComponent },
+];
 
 @NgModule({
   declarations: [
@@ -28,13 +39,13 @@ import { DropdownDirective } from './shared/dropdown.directive';
     BasicHightlightDirective,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    ActiveusersComponent,
+    InactiveusersComponent,
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+  providers: [ShoppingListService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -25,7 +25,7 @@
           Mange Recipe
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">To Shopping List</a></li>
+          <li><a class="dropdown-item" href="javascript:void(0);" (click)="sendToSL()">To Shopping List</a></li>
           <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
           <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
         </ul>
@@ -41,6 +41,13 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h5>ingredients</h5>
+    <ul class="list-group">
+      <li
+        class="list-group-item list-group-item-action"
+        *ngFor="let ingredients of recipeDetails.ingredients"
+      >
+        {{ ingredients.name }} - {{ ingredients.amount }}
+      </li>
+    </ul>
   </div>
 </div>
