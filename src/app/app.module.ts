@@ -17,14 +17,12 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { ActiveusersComponent } from './@practice/activeusers/activeusers.component';
 import { InactiveusersComponent } from './@practice/inactiveusers/inactiveusers.component';
 import { ShoppingListService } from './shopping-list/shoppinglist.service';
-import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { RoutingmodelComponent } from './@practice/routingmodel/routingmodel.component';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'recipes', component: RecipesComponent },
-  { path: 'shoppingList', component: ShoppingListComponent },
-];
+import { NotfoundComponent } from './notfound/notfound.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -43,8 +41,10 @@ const appRoutes: Routes = [
     ActiveusersComponent,
     InactiveusersComponent,
     HomeComponent,
+    RoutingmodelComponent,
+    NotfoundComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [ShoppingListService],
   bootstrap: [AppComponent],
 })
