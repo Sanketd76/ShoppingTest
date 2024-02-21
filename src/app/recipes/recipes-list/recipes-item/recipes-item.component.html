@@ -1,4 +1,9 @@
-<a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex" (click)="onSendList()">
+<a
+  href="javascript:void(0);"
+  class="list-group-item list-group-item-action d-flex"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+>
   <div class="me-auto">
     <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
     <p class="list-group-item-text">{{ recipe.desc }}</p>

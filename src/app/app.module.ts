@@ -23,6 +23,7 @@ import { RoutingmodelComponent } from './@practice/routingmodel/routingmodel.com
 import { NotfoundComponent } from './notfound/notfound.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { StartpageComponent } from './recipes/startpage/startpage.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
     RoutingmodelComponent,
     NotfoundComponent,
+    StartpageComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [ShoppingListService],

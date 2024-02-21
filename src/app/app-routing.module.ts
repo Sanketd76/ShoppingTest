@@ -6,9 +6,16 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ActiveusersComponent } from './@practice/activeusers/activeusers.component';
 import { RoutingmodelComponent } from './@practice/routingmodel/routingmodel.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { StartpageComponent } from './recipes/startpage/startpage.component';
+import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'recipes', component: RecipesComponent },
+  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
+  {
+    path: 'recipes', component: RecipesComponent, children: [
+      { path: '', component: StartpageComponent },
+      { path: ':id', component: RecipesDetailComponent }
+    ]
+  },
   { path: 'shoppingList', component: ShoppingListComponent },
   { path: 'activeusers/:id/:name', component: ActiveusersComponent },
   { path: 'routing/:id/:name', component: RoutingmodelComponent },
@@ -20,4 +27,4 @@ const appRoutes: Routes = [
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

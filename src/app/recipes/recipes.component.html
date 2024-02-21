@@ -3,9 +3,6 @@
     <app-recipes-list></app-recipes-list>
   </div>
   <div class="col-md-7">
-    <app-recipes-detail *ngIf="selectedRecipe; else noDataCont" [recipeDetails]="selectedRecipe"></app-recipes-detail>
-    <ng-template #noDataCont>
-      <p>No List Selected!!</p>
-    </ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>
