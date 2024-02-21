@@ -8,13 +8,18 @@ import { RoutingmodelComponent } from './@practice/routingmodel/routingmodel.com
 import { NotfoundComponent } from './notfound/notfound.component';
 import { StartpageComponent } from './recipes/startpage/startpage.component';
 import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   {
-    path: 'recipes', component: RecipesComponent, children: [
+    path: 'recipes',
+    component: RecipesComponent,
+    children: [
       { path: '', component: StartpageComponent },
-      { path: ':id', component: RecipesDetailComponent }
-    ]
+      { path: 'new', component: RecipeEditComponent },
+      { path: ':id', component: RecipesDetailComponent },
+      { path: ':id/edit', component: RecipeEditComponent },
+    ],
   },
   { path: 'shoppingList', component: ShoppingListComponent },
   { path: 'activeusers/:id/:name', component: ActiveusersComponent },
@@ -27,4 +32,4 @@ const appRoutes: Routes = [
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -24,6 +24,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { StartpageComponent } from './recipes/startpage/startpage.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { StartpageComponent } from './recipes/startpage/startpage.component';
     RoutingmodelComponent,
     NotfoundComponent,
     StartpageComponent,
+    RecipeEditComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [ShoppingListService],
