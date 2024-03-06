@@ -22,4 +22,8 @@ export class ShoppingEditComponent {
 
     this.slService.addIngredient(newIngredient);
   }
+
+  formOnsubmit(){
+    
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +12,22 @@ export class HeaderComponent {
 
   @Output() featureSelected = new EventEmitter<string>();
 
-  constructor(private router: Router){}
+  constructor(
+    private router: Router,
+    private dataSoreService: DataStorageService
+  ) {}
 
   onSelect(feature: string) {
     this.featureSelected.emit(feature);
   }
-  onLoadServe(){
-    this.router.navigate(['/shoppingList'])
+  onLoadServe() {
+    this.router.navigate(['/shoppingList']);
+  }
 
+  onSaveData() {
+    this.dataSoreService.storeRecipes();
+  }
+  onFetchData(){
+    this.dataSoreService.fetchRecipes();
   }
 }

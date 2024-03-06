@@ -1,5 +1,19 @@
 <div class="row">
   <div class="col-md-5">
+    <a
+      href="javascript:void(0)"
+      (click)="sendReq({ title: 'sameer', content: 'dhavan' })"
+      >Send Request</a
+    >
+
+    <div>
+      <p *ngIf="loadedPost.length < 1">no Post Available</p>
+      <div *ngFor="let post of loadedPost">
+        {{ post.title }} - {{ post.content }}
+
+        <a (click)="deleteData(post.id)">X</a>
+      </div>
+    </div>
     <app-recipes-list></app-recipes-list>
   </div>
   <div class="col-md-7">
