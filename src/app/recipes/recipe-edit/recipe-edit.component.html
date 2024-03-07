@@ -1,1 +1,56 @@
-<p>recipe-edit works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="recipeForm">
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-danger">cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="from-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" />
+          </div>
+          <div class="from-group">
+            <label for="imagePath">Image Url</label>
+            <input type="text" id="imagePath" class="form-control" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <img width="150" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="from-group">
+            <label for="description">Description</label>
+            <textarea id="description" class="form-control"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="from-group">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="from-group">
+                <input type="number" class="form-control" />
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-danger">X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

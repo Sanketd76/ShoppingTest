@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -10,6 +11,8 @@ export class RecipeEditComponent implements OnInit {
   id!: number;
   editMode = false;
 
+  recipeForm!: FormGroup;
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -17,6 +20,12 @@ export class RecipeEditComponent implements OnInit {
       this.id = params['id'];
       this.editMode = params['id'] != null;
       console.log(this.editMode);
+    });
+  }
+
+  private initForm() {
+    this.recipeForm = new FormGroup({
+      name: new FormControl(),
     });
   }
 }

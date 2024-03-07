@@ -17,7 +17,8 @@ export class DataStorageService {
   }
 
   fetchRecipes() {
-    this.http.get<Recipe[]>(this.dataUrl).subscribe((recipes) => {
+    this.http.get<Recipe[]>(this.dataUrl).pipe().subscribe((recipes) => {
+      console.log(recipes)
       this.recipeService.setRecipes(recipes);
     });
   }
