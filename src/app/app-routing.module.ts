@@ -9,6 +9,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { StartpageComponent } from './recipes/startpage/startpage.component';
 import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { AuthComponent } from './auth/auth.component';
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   {
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
       { path: ':id/edit', component: RecipeEditComponent },
     ],
   },
+  { path: 'auth', component: AuthComponent },
   { path: 'shoppingList', component: ShoppingListComponent },
   { path: 'activeusers/:id/:name', component: ActiveusersComponent },
   { path: 'routing/:id/:name', component: RoutingmodelComponent },

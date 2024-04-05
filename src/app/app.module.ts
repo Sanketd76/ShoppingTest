@@ -29,6 +29,7 @@ import { AppComponent } from './app.component';
 import { DataStorageService } from './shared/data-storage.service';
 import { RecipeService } from './recipes/recipe.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotfoundComponent,
     StartpageComponent,
     RecipeEditComponent,
+    AuthComponent
+
   ],
   imports: [
     BrowserModule,

@@ -9,18 +9,29 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./recipes-list.component.scss'],
 })
 export class RecipesListComponent implements OnInit {
+  recipes:Recipe[]=[];
+  testvalue:String="";
+
   constructor(
     private recipeData: RecipeService,
     private route: ActivatedRoute,
     private router: Router
   ) {
+    
   }
 
   ngOnInit(): void {
-    this.recipes = this.recipeData.getRecipes();
+    this.recipeData.testObs.subscribe(res => {
+      console.log(res);
+      this.testvalue=res;
+    });
+    this.recipeData.recipeval.subscribe(res=>{
+      console.log(res);
+      this.recipes = res
+    })
+  
   }
 
-  recipes: Recipe[] = [];
 
   CreateNewRecipe() {
     this.router.navigate(['new'], { relativeTo: this.route });
